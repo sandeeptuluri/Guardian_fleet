@@ -1,0 +1,42 @@
+Certainly! Here is the summary for each file in the `guardian_fleet` directory:
+
+### base_agent.py
+This file contains an abstract base class for setting up the Gemini model and binding tools. It serves as the foundation for other agent classes to inherit from.
+
+### ingestion_agent.py
+This file defines the `IngestionAgent` class, which is responsible for parsing regulatory law and policy documents. It ingests the documents and processes them for further analysis by other agents.
+
+### auditor_agent.py
+This file defines the `AuditorAgent` class, which audits the compliance of enterprise assets against regulatory statutes. It analyzes the documents processed by the `IngestionAgent` and identifies any non-compliance issues.
+
+### remediation_agent.py
+This file defines the `RemediationAgent` class, which generates exact code/policy patches to address compliance violations identified by the `AuditorAgent`. It also includes an autonomous self-healing loop to retry patch generation if validation errors occur.
+
+### gatekeeper_agent.py
+This file defines the `GatekeeperAgent` class, which acts as a risk evaluator and pauses the workflow at the Gatekeeper layer for Human-in-the-Loop (HITL) authorization. It ensures that any critical changes are reviewed before being applied.
+
+### orchestrator.py
+This file contains the `GuardianFleetOrchestrator` class, which orchestrates the execution of the multi-agent pipeline. It manages the lifecycle of the enterprise compliance fleet, including sequential agent delegation and trajectory logging.
+
+### tools.py
+This file defines custom tools used by the agents, including `database_lookup_tool` for enterprise database lookups and `code_patch_validator` for validating generated patches.
+
+### schemas.py
+This file contains Pydantic data schemas for RuleSet, ComplianceReport, and PatchPayload, ensuring data integrity and validation.
+
+### main.py
+This file serves as the CLI entrypoint and async task runner. It initializes the orchestrator and runs the multi-agent pipeline for a specified policy ID.
+
+### app.py
+This file defines the Streamlit dashboard for the Enterprise Compliance & HITL (Human-in-the-Loop) system. It provides a real-time interface to monitor agent metrics, view self-healing trajectories, and manage approvals.
+
+### requirements.txt
+This file lists the core project dependencies required to run the GuardianFleet system.
+
+### README.md
+This file contains the project documentation and architecture map, providing an overview of the system, its architecture, and how to set up and run it.
+
+### .env
+This file stores environment variables, such as the Gemini API Key, for use in the project.
+
+Would you like me to perform any further actions with these summaries?
